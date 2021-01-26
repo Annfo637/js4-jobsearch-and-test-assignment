@@ -25,17 +25,4 @@ describe("SearchInput renders correctly", () => {
     wrapper.find("input").simulate("change", { target: { value: "test" } });
     expect(wrapper.find("input").prop("value")).toBe("test");
   });
-  it("searchString with multiple words is correct", () => {
-    const wrapper = mount(
-      <SearchContextProvider>
-        <BrowserRouter>
-          <SearchInput />
-        </BrowserRouter>
-      </SearchContextProvider>
-    );
-    wrapper
-      .find("input")
-      .simulate("change", { target: { value: "test more" } });
-    expect(wrapper.find("input").prop("value")).toBe("test+more");
-  });
 });

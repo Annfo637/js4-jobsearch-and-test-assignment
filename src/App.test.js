@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { mount } from "enzyme";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("test if App renders", () => {
+  const wrapper = mount(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+
+  it("renders wrapping div with class app-container", () => {
+    expect(wrapper.find("div.app-container")).toBeTruthy();
+  });
 });

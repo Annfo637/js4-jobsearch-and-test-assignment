@@ -38,12 +38,11 @@ const SearchButton = styled.button`
 export default function SearchInput() {
   const { searchString, setSearchString } = useContext(SearchContext);
 
-  function handleSearchString(e) {
-    const textInput = e.target.value;
-    const modifiedString = textInput.replace(" ", "+");
-
+  function handleSearchString() {
+    const modifiedString = searchString.replace(" ", "+");
     setSearchString(modifiedString);
   }
+
   return (
     <SearchContainer>
       <Heading>
@@ -56,10 +55,12 @@ export default function SearchInput() {
         type="text"
         placeholder="Enter keyword"
         value={searchString}
-        onChange={handleSearchString}
+        onChange={(e) => setSearchString(e.target.value)}
       />
       <Link to="/jobs/">
-        <SearchButton type="button">Search</SearchButton>
+        <SearchButton type="button" onClick={handleSearchString}>
+          Search
+        </SearchButton>
       </Link>
     </SearchContainer>
   );

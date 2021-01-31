@@ -4,9 +4,19 @@ import JobDetailPage from "./pages/JobDetailPage";
 import JobListPage from "./pages/JobListPage";
 import SearchPage from "./pages/SearchPage";
 import styled from "styled-components";
+import BackgroundImage from "./images/yellowflowers-unsplash.jpg";
 
 const StyledContainer = styled.div`
-  margin: 30px;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: lightgray url(${BackgroundImage}) repeat;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-attachment: scroll;
 `;
 
 function App() {

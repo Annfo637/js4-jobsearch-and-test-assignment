@@ -4,10 +4,14 @@ import { SearchContext } from "../contexts/SearchContextProvider";
 import styled from "styled-components";
 
 const SearchContainer = styled.div`
+  position: relative;
+  top: 40px;
+  background-color: lightgray;
   text-align: center;
-  border: dotted 10px goldenrod;
+  border: lightgray solid 2px;
   border-radius: 15px;
   padding: 40px;
+  margin: 0 25%;
 `;
 
 const Heading = styled.h1`
@@ -23,14 +27,17 @@ const SearchInputField = styled.input`
   font-size: 18px;
   margin-right: 5px;
   padding: 5px;
-  border: solid 1px #2c2c2c;
+  border: solid 1px transparent;
   border-radius: 5px;
 `;
 
 const SearchButton = styled.button`
+  color: whitesmoke;
+  background-color: #e6b854;
   font-size: 18px;
   margin-left: 5px;
   padding: 5px;
+  border: solid 1px transparent;
   border-radius: 5px;
   box-shadow: 5px 5px 3px #888888;
 `;

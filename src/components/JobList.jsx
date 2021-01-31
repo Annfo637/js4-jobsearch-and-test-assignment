@@ -4,9 +4,16 @@ import { SearchContext } from "../contexts/SearchContextProvider";
 import JobItem from "./JobItem";
 import styled from "styled-components";
 
+const ListHeader = styled.div`
+  margin: 0 10%;
+`;
+
 const StyledButton = styled.button`
+  color: whitesmoke;
+  background-color: #e6b854;
   font-size: 18px;
   padding: 5px;
+  border: solid 1px transparent;
   border-radius: 5px;
   box-shadow: 5px 5px 3px #888888;
 `;
@@ -32,7 +39,9 @@ export default function JobList() {
   function renderJobsFound() {
     return (
       <div>
-        <h4>Found {jobList.length} job(s)</h4>
+        <ListHeader>
+          <h4>Found {jobList.length} job(s)</h4>
+        </ListHeader>
         {jobList && //redundant check?
           jobList.map((job, index) => {
             return (
@@ -75,9 +84,11 @@ export default function JobList() {
 
   return (
     <div>
-      <Link to="/">
-        <StyledButton type="button">Back to search page</StyledButton>
-      </Link>
+      <ListHeader>
+        <Link to="/">
+          <StyledButton type="button">Back to search page</StyledButton>
+        </Link>
+      </ListHeader>
       {jobList.length !== 0 ? renderJobsFound() : renderNoJobsFound()}
     </div>
   );

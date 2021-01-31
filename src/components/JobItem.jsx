@@ -4,11 +4,11 @@ import Image from "./Image";
 import styled from "styled-components";
 
 const StyledJobItemCard = styled.div`
-  block-size: 80%;
-  border: solid #b8b8b8 1px;
+  background-color: #e9e9e9;
+  border: solid 1px transparent;
   border-radius: 5px;
   box-shadow: 10px 10px 8px #888888;
-  margin: 30px;
+  margin: 20px 10%;
   padding: 20px;
 `;
 
@@ -18,6 +18,16 @@ const StyledJobTitle = styled.h2`
 
 const StyledJobType = styled.strong`
   display: block;
+`;
+
+const StyledButton = styled.button`
+  color: whitesmoke;
+  background-color: coral;
+  font-size: 18px;
+  padding: 5px;
+  border: solid 1px transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px #888888;
 `;
 
 export default function JobItem({
@@ -45,7 +55,9 @@ export default function JobItem({
 
       <div className="description" dangerouslySetInnerHTML={createMarkup()} />
 
-      <Link to={`/jobs/${id}`}>Read more</Link>
+      <Link to={`/jobs/${id}`}>
+        <StyledButton>Read more</StyledButton>
+      </Link>
     </StyledJobItemCard>
   );
 }
